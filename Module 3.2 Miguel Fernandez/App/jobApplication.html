@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Job Application Form</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background:#f4f4f4; }
+        .container { background:#fff; padding:25px; max-width:600px; margin:auto; border-radius:8px; }
+        h1 { color:#333; }
+        label { display:block; margin-top:12px; font-weight:bold; }
+        input, select, textarea { width:100%; padding:8px; margin-top:4px; box-sizing:border-box; }
+        .radio-group label { display:inline; font-weight:normal; margin-right:15px; }
+        button { margin-top:20px; padding:10px 25px; background:#2c3e50; color:#fff; border:none; cursor:pointer; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Job Application Form</h1>
+        <p>Please complete all fields below to apply</p>
+
+        <!-- Form submits via POST -->
+        <form action="displayApplication.jsp" method="post">
+
+            <!--text input -->
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" required>
+
+            <!--email input -->
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+
+            <!--number input -->
+            <label for="experience">Years of Experience</label>
+            <input type="number" id="experience" name="experience" min="0" max="50" required>
+
+            <!--dropdown (select) input -->
+            <label for="position">Position Applying For</label>
+            <select id="position" name="position">
+                <option value="Developer">Developer</option>
+                <option value="Administrator">Administrator</option>
+                <option value="Analyst">Analyst</option>
+                <option value="Manager">Manager</option>
+            </select>
+
+            <!--radio button input -->
+            <label>Employment Type Desired</label>
+            <div class="radio-group">
+                <label><input type="radio" name="empType" value="Full-Time" checked> Full-Time</label>
+                <label><input type="radio" name="empType" value="Part-Time"> Part-Time</label>
+                <label><input type="radio" name="empType" value="Contract"> Contract</label>
+            </div>
+
+            <!--date input -->
+            <label for="startDate">Available Start Date</label>
+            <input type="date" id="startDate" name="startDate" required>
+
+            <!--textarea input -->
+            <label for="comments">Additional Comments</label>
+            <textarea id="comments" name="comments" rows="4"></textarea>
+
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
+</body>
+</html>
